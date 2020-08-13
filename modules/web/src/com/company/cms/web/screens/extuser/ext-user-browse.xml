@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://extUserBrowse.caption"
+        focusComponent="extUsersTable"
+        messagesPack="com.company.cms.web.screens.extuser">
+    <data readOnly="true">
+        <collection id="extUsersDc"
+                    class="com.company.cms.entity.ExtUser">
+            <view extends="_minimal">
+                <property name="phone"/>
+                <property name="loginLowerCase"/>
+                <property name="password"/>
+                <property name="passwordEncryption"/>
+                <property name="firstName"/>
+                <property name="lastName"/>
+                <property name="middleName"/>
+                <property name="position"/>
+                <property name="email"/>
+                <property name="language"/>
+                <property name="timeZone"/>
+                <property name="timeZoneAuto"/>
+                <property name="active"/>
+                <property name="changePasswordAtNextLogon"/>
+                <property name="userRoles" view="_minimal"/>
+                <property name="ipMask"/>
+                <property name="sysTenantId"/>
+            </view>
+            <loader id="extUsersDl">
+                <query>
+                    <![CDATA[select e from cms_ExtUser e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="extUsersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="extUsersTable"
+                dataLoader="extUsersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="extUsersTable"
+                    width="100%"
+                    dataContainer="extUsersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="login"/>
+                <column id="name"/>
+                <column id="firstName"/>
+                <column id="lastName"/>
+                <column id="middleName"/>
+                <column id="position"/>
+                <column id="email"/>
+                <column id="language"/>
+                <column id="timeZone"/>
+                <column id="timeZoneAuto"/>
+                <column id="active"/>
+                <column id="changePasswordAtNextLogon"/>
+                <column id="ipMask"/>
+                <column id="phone"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="extUsersTable.create"/>
+                <button id="editBtn" action="extUsersTable.edit"/>
+                <button id="removeBtn" action="extUsersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

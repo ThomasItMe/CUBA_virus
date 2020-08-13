@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-cms" insertBefore="administration" caption="mainMsg://menu_config.application-cms">
+        <item screen="cms_ExtUser.browse" caption="mainMsg://menu_config.cms_ExtUser.browse"/>
+        <item screen="cms_ExtCompany.browse" caption="mainMsg://menu_config.cms_ExtCompany.browse"/>
+    </menu>
+</menu-config>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://extUserEdit.caption"
+        focusComponent="form"
+        messagesPack="com.company.cms.web.screens.extuser">
+    <data>
+        <instance id="extUserDc"
+                  class="com.company.cms.entity.ExtUser">
+            <view extends="_minimal">
+                <property name="phone"/>
+                <property name="extcompany" view="_minimal"/>
+                <property name="loginLowerCase"/>
+                <property name="password"/>
+                <property name="passwordEncryption"/>
+                <property name="firstName"/>
+                <property name="lastName"/>
+                <property name="middleName"/>
+                <property name="position"/>
+                <property name="email"/>
+                <property name="language"/>
+                <property name="timeZone"/>
+                <property name="timeZoneAuto"/>
+                <property name="active"/>
+                <property name="changePasswordAtNextLogon"/>
+                <property name="userRoles" view="_minimal"/>
+                <property name="ipMask"/>
+                <property name="sysTenantId"/>
+            </view>
+            <loader/>
+            <collection id="userRolesDc" property="userRoles"/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="scrollBox" spacing="true">
+        <scrollBox id="scrollBox" spacing="true">
+            <form id="form" dataContainer="extUserDc">
+                <column width="350px">
+                    <textField id="loginField" property="login"/>
+                    <textField id="nameField" property="name"/>
+                    <textField id="firstNameField" property="firstName"/>
+                    <textField id="lastNameField" property="lastName"/>
+                    <textField id="middleNameField" property="middleName"/>
+                    <textField id="positionField" property="position"/>
+                    <textField id="emailField" property="email"/>
+                    <textField id="languageField" property="language"/>
+                    <textField id="timeZoneField" property="timeZone"/>
+                    <checkBox id="timeZoneAutoField" property="timeZoneAuto"/>
+                    <checkBox id="activeField" property="active"/>
+                    <checkBox id="changePasswordAtNextLogonField" property="changePasswordAtNextLogon"/>
+                    <textField id="ipMaskField" property="ipMask"/>
+                    <textField id="phoneField" property="phone"/>
+                    <pickerField id="extcompanyField" property="extcompany">
+                        <actions>
+                            <action id="lookup" type="picker_lookup"/>
+                            <action id="clear" type="picker_clear"/>
+                        </actions>
+                    </pickerField>
+                </column>
+            </form>
+            <groupBox id="userRolesBox" caption="msg://com.company.cms.entity/ExtUser.userRoles">
+                <table id="userRolesTable" dataContainer="userRolesDc" width="100%" height="200px">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                    </columns>
+                    <buttonsPanel>
+                        <button action="userRolesTable.create"/>
+                        <button action="userRolesTable.edit"/>
+                        <button action="userRolesTable.remove"/>
+                    </buttonsPanel>
+                </table>
+            </groupBox>
+        </scrollBox>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
