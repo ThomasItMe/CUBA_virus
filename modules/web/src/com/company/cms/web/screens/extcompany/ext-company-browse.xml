@@ -7,7 +7,10 @@
     <data readOnly="true">
         <collection id="extCompaniesDc"
                     class="com.company.cms.entity.ExtCompany">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="companyLicensePhoto" view="_minimal"/>
+                <property name="authorizationLetterPhoto" view="_minimal"/>
+            </view>
             <loader id="extCompaniesDl">
                 <query>
                     <![CDATA[select e from cms_ExtCompany e]]>
@@ -34,7 +37,12 @@
             </actions>
             <columns>
                 <column id="name"/>
+                <column id="type"/>
+                <column id="level"/>
                 <column id="status"/>
+                <column id="registrationNo"/>
+                <column id="companyLicensePhoto"/>
+                <column id="authorizationLetterPhoto"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

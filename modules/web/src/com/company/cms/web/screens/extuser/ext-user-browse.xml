@@ -7,25 +7,7 @@
     <data readOnly="true">
         <collection id="extUsersDc"
                     class="com.company.cms.entity.ExtUser">
-            <view extends="_minimal">
-                <property name="phone"/>
-                <property name="loginLowerCase"/>
-                <property name="password"/>
-                <property name="passwordEncryption"/>
-                <property name="firstName"/>
-                <property name="lastName"/>
-                <property name="middleName"/>
-                <property name="position"/>
-                <property name="email"/>
-                <property name="language"/>
-                <property name="timeZone"/>
-                <property name="timeZoneAuto"/>
-                <property name="active"/>
-                <property name="changePasswordAtNextLogon"/>
-                <property name="userRoles" view="_minimal"/>
-                <property name="ipMask"/>
-                <property name="sysTenantId"/>
-            </view>
+            <view extends="_local"/>
             <loader id="extUsersDl">
                 <query>
                     <![CDATA[select e from cms_ExtUser e]]>
@@ -63,6 +45,7 @@
                 <column id="timeZoneAuto"/>
                 <column id="active"/>
                 <column id="changePasswordAtNextLogon"/>
+                <column id="groupNames"/>
                 <column id="ipMask"/>
                 <column id="phone"/>
             </columns>

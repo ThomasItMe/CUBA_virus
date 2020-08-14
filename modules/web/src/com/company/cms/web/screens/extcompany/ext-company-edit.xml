@@ -6,7 +6,10 @@
     <data>
         <instance id="extCompanyDc"
                   class="com.company.cms.entity.ExtCompany">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="companyLicensePhoto" view="_minimal"/>
+                <property name="authorizationLetterPhoto" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -16,7 +19,14 @@
         <form id="form" dataContainer="extCompanyDc">
             <column width="350px">
                 <textField id="nameField" property="name"/>
+                <lookupField id="typeField" property="type"/>
+                <lookupField id="levelField" property="level"/>
                 <lookupField id="statusField" property="status"/>
+                <textField id="registrationNoField" property="registrationNo"/>
+                <upload id="companyLicensePhotoField" fileStoragePutMode="IMMEDIATE" property="companyLicensePhoto"
+                        showFileName="true"/>
+                <upload id="authorizationLetterPhotoField" fileStoragePutMode="IMMEDIATE"
+                        property="authorizationLetterPhoto" showFileName="true"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

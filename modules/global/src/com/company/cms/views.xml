@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
-    <view entity="cms_ExtUser" name="extUser-view" extends="_local">
-        <property name="extcompany" view="_minimal"/>
-    </view>
-    <view entity="cms_ExtCompany" name="extCompany-view" extends="_local"/>
 </views>

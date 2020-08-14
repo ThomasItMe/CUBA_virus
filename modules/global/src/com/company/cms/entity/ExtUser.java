@@ -15,14 +15,14 @@ public class ExtUser extends User {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "EXTCOMPANY_ID")
-    private ExtCompany extcompany;
+    private ExtCompany company;
 
     public ExtCompany getExtcompany() {
-        return extcompany;
+        return company;
     }
 
-    public void setExtcompany(ExtCompany extcompany) {
-        this.extcompany = extcompany;
+    public void setExtcompany(ExtCompany company) {
+        this.company = company;
     }
 
     public String getPhone() {

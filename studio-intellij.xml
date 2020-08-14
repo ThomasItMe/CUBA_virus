@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CubaPluginProjectSettings">
+    <option name="stateVersion" value="1" />
+    <option name="savedDbProperties">
+      <list>
+        <SavedDbProperties>
+          <option name="customUrl" value="true" />
+          <option name="databaseName" value="cms" />
+          <option name="dbType" value="postgres" />
+          <option name="dbmsVersion" />
+          <option name="host" value="localhost" />
+          <option name="pass" value="1234" />
+          <option name="port" value="9010" />
+          <option name="systemPassword" value="" />
+          <option name="systemUser" value="" />
+          <option name="url" value="jdbc:postgresql://localhost:5432/cms" />
+          <option name="user" value="postgres" />
+        </SavedDbProperties>
+      </list>
+    </option>
+  </component>
+</project>
